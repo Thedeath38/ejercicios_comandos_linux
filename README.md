@@ -58,7 +58,7 @@
 
 **29. Borrar los archivos de dir312 que no acaben en b y tengan una q como cuarta letra.** 
 
-**30. Mover el directorio dir312 debajo de dir3.  **
+**30. Mover el directorio dir312 debajo de dir3.**
 
 **31. Crear un enlace simbólico al directorio dir1 dentro del directorio dir3 llamado enlacedir1.**
 
