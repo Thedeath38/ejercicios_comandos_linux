@@ -74,15 +74,16 @@ cp $HOME/PRUEBA/mensaje $HOME/PRUEBA/dir2/
 cp $HOME/PRUEBA/mensaje $HOME/PRUEBA/dir3/
 
 **20. Comprobar el ejercicio anterior mediante un solo comando.**
+ls -R $HOME/PRUEBA
 
 **21. Copiar los archivos del directorio rc.d que se encuentra en /etc al directorio dir31.**
-
+cp -r /etc/rc.d dir3
 **22. Copiar en el directorio dir311 los archivos de /bin que tengan una a como segunda letra y su nombre tenga cuatro letras.**
-
+cp /bin/?a?? $HOME/PRUEBA/dir3/dir31/dir311/
 **23. Copiar el directorio de otro usuario y sus subdirectorios debajo de dir11 (incluido el propio directorio).**
 
 **24. Mover el directorio dir31 y sus subdirectorios debajo de dir2.** 
-
+mv $HOME/PRUEBA/dir3/dir31 $HOME/PRUEBA/dir2
 **25. Mostrar por pantalla los archivos ordinarios del directorio HOME y sus subdirectorios.** 
 
 **26. Ocultar el archivo mensaje del directorio dir3.**
