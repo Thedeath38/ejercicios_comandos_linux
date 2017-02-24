@@ -81,30 +81,35 @@ cp -r /etc/rc.d dir3
 **22. Copiar en el directorio dir311 los archivos de /bin que tengan una a como segunda letra y su nombre tenga cuatro letras.**
 cp /bin/?a?? $HOME/PRUEBA/dir3/dir31/dir311/
 **23. Copiar el directorio de otro usuario y sus subdirectorios debajo de dir11 (incluido el propio directorio).**
-
+sudo cp -r /home/usuario $HOME
 **24. Mover el directorio dir31 y sus subdirectorios debajo de dir2.** 
 mv $HOME/PRUEBA/dir3/dir31 $HOME/PRUEBA/dir2
 **25. Mostrar por pantalla los archivos ordinarios del directorio HOME y sus subdirectorios.** 
-
+ls -R $HOME
 **26. Ocultar el archivo mensaje del directorio dir3.**
-
+mv $HOME/PRUEBA/mensaje $HOME/PRUEBA/.mensaje
 **27. Borrar los archivos y directorios de dir1, incluido el propio directorio.** 
-
+rm -R $HOME/PRUEBA/dir1
 **28. Copiar al directorio dir312 los ficheros del directorio /dev que empiecen por t, acaben en una letra que vaya de la a a la b y tengan cinco letras en su nombre.** 
-
+cp /dev/t???[a*b] $HOME/PRUEBA/dir3/dir31/dir312
 **29. Borrar los archivos de dir312 que no acaben en b y tengan una q como cuarta letra.** 
-
+rm $HOME/PRUEBA/dir3/dir31/dir312/???q*[^t]
 **30. Mover el directorio dir312 debajo de dir3.**
-
+mv $HOME/PRUEBA/dir3/dir31/dir312/ $HOME/PRUEBA/dir3/
 **31. Crear un enlace simbólico al directorio dir1 dentro del directorio dir3 llamado enlacedir1.**
-
+ln -s $HOME/PRUEBA/dir1 $HOME/PRUEBA/dir3/enlacedir1
 **32. Posicionarse en dir3 y, empleando el enlace creado en el ejercicio anterior, crear el directorio nuevo1 dentro de dir1.**
-
+cd $HOME/PRUEBA/dir3
+mkdir enlacedir1/nuevo1
 **33. Utilizando el enlace creado copiar los archivos que empiecen por u del directorio /bin en directorio nuevo1.**
+sudo cp /bin/u* enlacedir1/nuevo1
 
 **34. Crear dos enlaces duros del fichero fich1, llamarlo enlace, en los directorios dir1 y dir2.**
+ln $HOME/PRUEBA/fich1 $HOME/PRUEBA/dir1
+ln $HOME/PRUEBA/fich1 $HOME/PRUEBA/dir2
 
 **35. Borrar el archivo fich1 y copiar enlace en dir3.**
+rm $HOME/PRUEBA/Fich1 && cp $HOME/PRUEBA/dir1/fich1 $HOME/PRUEBA/dir3/fich1 
 
 **36. Crear un enlace simbólico (llamado enlafich1) al fichero enlace de dir2 en dir1.**  
 
@@ -115,25 +120,45 @@ mv $HOME/PRUEBA/dir3/dir31 $HOME/PRUEBA/dir2
 **39. Borrar el fichero fich1 de dir2.** 
 
 **40. Borrar todos los archivos y directorios creados durante los ejercicios.**
+rm -rf $HOME/PRUEBA/*
 
 **41. Crear el directorio dir2 y dir3 en el directorio PRUEBA ¿Cuáles son los actuales permisos del directorio dir2?**
+mkdir $HOME/PRUEBA/dir2
+mkdir $HOME/PRUEBA/dir3
+ls -la $HOME/PRUEBA
 
 **42. Utilizando la notación simbólica, eliminar todos los permisos de escritura (propietario, grupo, otros) del directorio dir2.**
+chmod a-w $HOME/dir2
 
 **43. Utilizando la notación octal, eliminar el permiso de lectura del directorio dir2, al resto de los usuarios.**
+chmod 111 $HOME/PRUEBA/dir2
+
 **44. ¿Cuáles son ahora los permisos asociados a dir2?  **
+todos los de execucion
 
 **45. Crear bajo dir2, un directorio llamado dir2l.**
+mkdir $HOME/dir2/dir21
+no va a funcionar porque no tienes permisos de escritura
 
 **46. Concederse a sí mismo permiso de escritura en el directorio dir2 e intentar de nuevo el paso anterior.**
+chmod 311 $HOME/PRUEBA/dir2
 
 **47. ¿Cuáles son los valores por omisión asignados a los archivos?**
+propietario lectura escritura
+grupo lectura escritura
+otros lectura
 
 **48. Cambiar el directorio actual al directorio dir3. Imprimir su trayectoria completa para verificar el cambio.**
+cd dir3
+ls -R 
 
 **49. ¿Cuáles son los permisos asignados en su momento a este directorio?**
+propietario lectura escritura execucion
+grupo lectura escritura execucion
+otros execucion
 
 **50. Reiniciar el ordenador.**
+sudo shutdown -r now
 
 **51. Crear cuatro nuevos directorios llamados dira, dirb, dirc, y dird bajo el directorio actual.**  
 
@@ -160,8 +185,7 @@ mv $HOME/PRUEBA/dir3/dir31 $HOME/PRUEBA/dir2
 
 **62. Ver los permisos que tienen los archivos que empiecen por tt del directorio /dev.** 
 
-**63. Visualizar la lista de los archivos ordinarios que están en el directorio /usr/bin. ** 
-
+**63. Visualizar la lista de los archivos ordinarios que están en el directorio /usr/bin. **
 **64. Visualizar la lista de todos los directorios que cuelgan del raíz.**
 
 **65. Visualizar la lista de todos los ficheros que pertenezcan a root.**
@@ -181,6 +205,7 @@ mv $HOME/PRUEBA/dir3/dir31 $HOME/PRUEBA/dir2
 **72. Visualiza con la orden who la relación de usuarios conectados y sus terminales. Mediante la orden cat, crea un pequeño mensaje desde tu consola y redirígelo a uno de los terminales conectados.. **
 
 **73. Crea un archivo de tamaño 0**
+touch archivo
 
 **74. Visualiza el archivo /etc/motd, que contiene el "mensaje del día".**
 
@@ -229,10 +254,14 @@ mv $HOME/PRUEBA/dir3/dir31 $HOME/PRUEBA/dir2
 **96. Modificar la firma md5 y detectar que se ha cambiado (revisión de firma)**
 
 **97. Monitorear la ocupación de las particiones en los discos**
-
+df -lh
 **98. ¿Cual es el proceso que más carga el procesador?**
 
+
 **99. ¿Está corriendo el proceso bash?**
+ps a | grep bash
 
 **100. ¿Cuántos procesos que empiecen por k están corriendo?**
+
+
 
