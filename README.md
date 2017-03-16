@@ -31,10 +31,10 @@
 `ls [^t]*`
 
 
-**9. Listar todos los archivos del directorio usr y sus subdirectorios.** 
+**9. Listar todos los archivos del directorio usr y sus subdirectorios.**  
 `ls -R /usr`
 
-**10. Cambiarse al directorio tmp, crear directorio PRUEBA.**
+**10. Cambiarse al directorio tmp, crear directorio PRUEBA.**  
 `cd /tmp`  
 `mkdir PRUEBA`
 
@@ -145,7 +145,7 @@ chmod a-w $HOME/dir2
 **43. Utilizando la notación octal, eliminar el permiso de lectura del directorio dir2, al resto de los usuarios.**
 chmod 111 $HOME/PRUEBA/dir2
 
-**44. ¿Cuáles son ahora los permisos asociados a dir2?  **
+**44. ¿Cuáles son ahora los permisos asociados a dir2?**  
 todos los de execucion
 
 **45. Crear bajo dir2, un directorio llamado dir2l.**
